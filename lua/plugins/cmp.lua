@@ -13,19 +13,18 @@ return {
 	config = function()
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		local luasnip = require("luasnip")
-		-- Setup language servers.
-		local lspconfig = require("lspconfig")
-		local servers = {
-			"lua_ls",
-			"ts_ls",
-		}
-		for _, lsp in ipairs(servers) do
-			lspconfig[lsp].setup({
-				-- on_attach = my_custom_on_attach,
-				capabilities = capabilities,
-			})
-		end
 
+		-- Setup language servers.
+		require("mason-lspconfig").setup({
+			ensure_installed = { "lua_ls", "biome", "ts_ls", "pyright" },
+			handlers = {
+				function(server_name)
+					require("lspconfig")[server_name].setup({
+						capabilities = capabilities,
+					})
+				end,
+			},
+		})
 		local cmp = require("cmp")
 
 		cmp.setup({

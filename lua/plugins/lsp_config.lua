@@ -3,12 +3,16 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	config = function()
-		require("mason").setup()
-		require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "prettier", "black", "tsserver" } })
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-		-- After setting up mason-lspconfig you may set up servers via lspconfig
-		require("lspconfig").lua_ls.setup({})
-		require("lspconfig").tsserver.setup({})
-		require("lspconfig").pyright.setup({})
+		require("mason-lspconfig").setup({
+			ensure_installed = { "lua_ls", "biome", "tsserver", "pyright" },
+			handlers = {
+				function(server_name)
+					require("lspconfig")[server_name].setup({})
+				end,
+			},
+		})
 	end,
 }
