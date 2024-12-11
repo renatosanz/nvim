@@ -4,7 +4,6 @@ return {
 	enabled = true,
 	config = function()
 		vim.g.gruvbox_flat_style = "hard"
-
 		-- Example config in Lua
 		vim.g.gruvbox_italic_functions = true
 		vim.g.gruvbox_sidebars = { "qf", "vista_kind", "terminal", "packer" }
