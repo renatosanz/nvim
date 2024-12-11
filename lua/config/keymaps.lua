@@ -1,5 +1,6 @@
 local map = vim.keymap.set
 map("n", "<leader>l", ":Lazy<cr>", { desc = "Open Lazy", remap = true })
+map("n", "<leader>n", ":edit ~/.config/nvim<cr>", { desc = "Open Lazy", remap = true })
 map("n", "<leader>m", ":Mason<cr>", { desc = "Open Mason", remap = true })
 map("n", "e", "b", { remap = true })
 map("n", "<leader>ww", ":w<CR>", { desc = "Save file", remap = true })
