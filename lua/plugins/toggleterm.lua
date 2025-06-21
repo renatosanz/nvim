@@ -2,6 +2,16 @@ return {
 	{
 		"kessejones/term.nvim",
 		version = "*",
+		keys = {
+			{
+				"n",
+				"fd",
+				function()
+					require("term").toggle()
+				end,
+				desc = "Toggle terminal",
+			},
+		},
 		config = function()
 			require("term").setup({
 				shell = vim.o.shell,

@@ -16,7 +16,7 @@ return {
 
 		-- Setup language servers.
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "biome", "ts_ls", "pyright" },
+			ensure_installed = { "clangd", "lua_ls", "biome", "ts_ls", "pyright" },
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({
