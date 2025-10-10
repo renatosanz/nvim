@@ -54,6 +54,7 @@ return {
 		{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 		{ "<leader><leader>", builtin.find_files, desc = "Telescope find files" },
 		{ "<leader>ff", builtin.live_grep, desc = "Telescope live grep" },
+		{ "<leader>fr", builtin.oldfiles, desc = "Telescope oldfiles" },
 		{ "<leader>fb", builtin.buffers, desc = "Telescope buffers" },
 		{ "<leader>fh", builtin.help_tags, desc = "Telescope help tags" },
 	},

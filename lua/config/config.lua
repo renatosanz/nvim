@@ -26,7 +26,7 @@ vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.wrap = false -- No Wrap lines
+vim.opt.wrap = true -- No Wrap lines
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({ "*/node_modules/*" })
@@ -41,4 +41,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function(args)
 		require("conform").format({ bufnr = args.buf })
 	end,
+})
+vim.api.nvim_create_autocmd("FocusLost", {
+	pattern = "*",
+	command = "silent! wa", -- silently write all changed buffers
 })
