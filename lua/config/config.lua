@@ -2,9 +2,9 @@ vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
-
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.foldmethod = "manual"
 
 vim.opt.title = true
 vim.opt.autoindent = true
@@ -33,7 +33,7 @@ vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 vim.opt.splitkeep = "cursor"
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 vim.opt.undofile = true
 
 vim.api.nvim_create_autocmd("BufWritePre", {

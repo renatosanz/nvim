@@ -14,26 +14,20 @@ return {
 				cpp = { "clang-format" },
 				-- Conform will run the first available formatter
 				javascript = { "prettierd", "prettier", stop_after_first = true },
-				css = { "prettier" },
-				json = { "prettier" },
+				css = { "prettierd" },
+				json = { "prettierd" },
 				html = { "biome" },
 				xml = { "xmlformat" },
-				yaml = { "prettier" },
-				["markdown"] = { "prettier" },
-				["markdown.mdx"] = { "prettier" },
+				astro = { "prettier" },
+				yaml = { "prettierd" },
+				["markdown"] = { "prettierd" },
+				["markdown.mdx"] = { "prettierd" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,
-				timeout_ms = 1000,
+				timeout_ms = 100,
 			},
 		})
-		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 500,
-			})
-		end, { desc = "Format file or range (in visual mode)" })
 	end,
 }
