@@ -17,6 +17,7 @@ return {
 				css = { "prettierd" },
 				json = { "prettierd" },
 				html = { "biome" },
+				sql = { "pgformatter" },
 				xml = { "xmlformat" },
 				astro = { "prettier" },
 				yaml = { "prettierd" },
