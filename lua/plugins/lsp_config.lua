@@ -15,7 +15,7 @@ return {
 				"vtsls",
 				"pyright",
 				"stylua",
-				"pgformatter",
+				"pgformatter","",
 				"postgres-language-server",
 			},
 			handlers = {

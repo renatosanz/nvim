@@ -91,7 +91,7 @@ return {
 				lualine_a = {
 					{
 						"mode",
-						icon = ":)",
+						icon = " ***",
 						separator = { right = "" },
 						padding = { left = 0, right = 1 },
 					},

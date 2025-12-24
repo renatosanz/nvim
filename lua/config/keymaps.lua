@@ -20,14 +20,19 @@ map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
+-- nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
+map("n", "ca", function()
+	vim.lsp.buf.code_action()
+end, { desc = "Show code actions", remap = true })
+
 -- Disable arrows movement
 -- move lines
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
-map({ "v", "n" }, "j", "gj")
-map({ "v", "n" }, "k", "gk")
+-- map({ "v", "n" }, "j", "gj")
+-- map({ "v", "n" }, "k", "gk")
 
 map("v", "L", "$")
 map("v", "H", "0")
