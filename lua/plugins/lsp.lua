@@ -15,7 +15,7 @@ return {
 
 				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+				map("<F2>", vim.lsp.buf.rename, "[R]e[n]ame")
 				map("<leader>.", vim.lsp.buf.code_action, "[C]ode [A]ction")
 				map("<leader>i", "<cmd>TSToolsAddMissingImports<cr>", "TSToolsAddMissingImports")
 			end,

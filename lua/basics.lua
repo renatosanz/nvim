@@ -27,6 +27,11 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 -- vim.opt.background = "dark"
 
+vim.opt.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for
+vim.opt.shiftwidth = 4 -- Size of an indent
+vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.softtabstop = 4 -- Number of spaces that a <Tab> counts for while editing
+
 -- Basic mappings
 local map = vim.keymap.set
 map("i", "jk", "<esc>")
@@ -47,7 +52,8 @@ map("n", "<c-h>", "<c-w>h")
 map("n", "<c-l>", "<c-w>l")
 map("n", "<c-j>", "<c-w>j")
 map("n", "<c-k>", "<c-w>k")
-map("n", "fd", "<cmd>ToggleTerm<cr>", { noremap = true, silent = true })
+map("n", "fd", "<cmd>ToggleTerm<cr>", { noremap = true, silent = true, desc = "Toggle terminal" })
+map("n", "<C-w>", ":bd<CR>", { desc = "Close current buffer" })
 
 local opts = { buffer = 0 }
 map("t", "<esc>", [[<C-\><C-n>]], opts)
@@ -56,7 +62,6 @@ map("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
 map("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
 map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
 map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
-map("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
 map("v", "<leader>q", "<esc>", { desc = "Exit insert mode", remap = true })
 map("n", "<leader>q", ":q!<cr>", { desc = "Exit", remap = true })
 

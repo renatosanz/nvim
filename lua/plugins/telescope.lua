@@ -8,9 +8,14 @@ return {
 			grep_string = { previewer = false, theme = "ivy" },
 			diagnostics = { previewer = false, theme = "ivy" },
 			find_files = { previewer = true, theme = "ivy" },
-			buffers = { previewer = false, theme = "ivy" },
+			buffers = {
+				sort_lastused = true,
+				theme = "dropdown",
+				previewer = false,
+			},
 			current_buffer_fuzzy_find = { theme = "ivy" },
 			resume = { previewer = true, theme = "ivy" },
+			smart_open = { previewer = true, theme = "ivy" },
 			live_grep = { theme = "ivy" },
 		},
 		defaults = {
@@ -26,6 +31,7 @@ return {
 		{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git commits" },
 		{ "<leader>w", "<cmd>Telescope grep_string<cr>", desc = "Grep string" },
 		{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+		{ "<leader>r", "<cmd>Telescope smart_open<cr>", desc = "Recent files" },
 		{ "<leader>c", "<cmd>Telescope resume<cr>", desc = "Resume search" },
 		{ "<leader>s", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
 		{ "<leader>b", "<cmd>Telescope buffers<cr> <esc> <cr>", desc = "Buffers" },
