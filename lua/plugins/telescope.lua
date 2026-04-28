@@ -10,7 +10,7 @@ return {
 			find_files = { previewer = true, theme = "ivy" },
 			buffers = {
 				sort_lastused = true,
-				theme = "dropdown",
+				theme = "ivy",
 				previewer = false,
 			},
 			current_buffer_fuzzy_find = { theme = "ivy" },
