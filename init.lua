@@ -10,6 +10,17 @@ hi BufferLineSeparatorVisible guibg='#1D2021'
 set termguicolors
 ]])
 
+vim.diagnostic.config({
+	virtual_text = {
+		spacing = 4,
+		source = "if_many", -- Shows plugin/LSP name if there are multiple sources
+		prefix = "●", -- Change the prefix symbol inline
+	},
+	severity_sort = true, -- Puts higher priority errors first
+	underline = true, -- Underline the exact broken code
+	signs = true, -- Show symbols in the gutter (left column)
+})
+
 -- Setup lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
