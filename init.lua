@@ -11,15 +11,28 @@ set termguicolors
 ]])
 
 vim.diagnostic.config({
-	virtual_text = {
-		spacing = 4,
-		source = "if_many", -- Shows plugin/LSP name if there are multiple sources
-		prefix = "●", -- Change the prefix symbol inline
-	},
-	severity_sort = true, -- Puts higher priority errors first
-	underline = true, -- Underline the exact broken code
-	signs = true, -- Show symbols in the gutter (left column)
+	virtual_text = true,
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
 })
+
+vim.diagnostic.config({
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "󰃤",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.HINT] = "",
+			[vim.diagnostic.severity.INFO] = "󰅪",
+		},
+	},
+})
+
+vim.api.nvim_set_hl(0, "DiagnosticError", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "DiagnosticWarn", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "DiagnosticInfo", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "DiagnosticHint", { bg = "NONE" })
 
 -- Setup lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
