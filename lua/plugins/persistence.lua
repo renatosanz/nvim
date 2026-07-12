@@ -5,7 +5,7 @@ return {
 	keys = {
 		-- Restore the session for the current directory
 		{
-			"<leader>qs",
+			"qs",
 			function()
 				require("persistence").load()
 			end,
@@ -13,7 +13,7 @@ return {
 		},
 		-- Select a session to load
 		{
-			"<leader>qS",
+			"qS",
 			function()
 				require("persistence").select()
 			end,
@@ -21,7 +21,7 @@ return {
 		},
 		-- Restore the last session
 		{
-			"<leader>ql",
+			"ql",
 			function()
 				require("persistence").load({ last = true })
 			end,
@@ -29,7 +29,7 @@ return {
 		},
 		-- Stop Persistence from saving the session on exit
 		{
-			"<leader>qd",
+			"qd",
 			function()
 				require("persistence").stop()
 			end,
