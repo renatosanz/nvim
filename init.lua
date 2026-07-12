@@ -10,6 +10,8 @@ hi BufferLineSeparatorVisible guibg='#1D2021'
 set termguicolors
 ]])
 
+vim.cmd("highlight GitSignsCurrentLineBlame guifg=#888888 gui=italic")
+
 vim.diagnostic.config({
 	virtual_text = true,
 	signs = true,
